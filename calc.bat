@@ -22,32 +22,21 @@ set /p "option=Choose the operation: "
 
 if %option% == 1 (
 	set /A result = %a% + %b% 
+) else if %option% == 2 (
+	set /A result = %a% - %b% 
+) else if %option% == 3 (
+	set /A result = %a% * %b% 
+) else if %option% == 4 (
+	set /A result = %a% / %b% 
+) else if %option% == 5 (
+	set /A result = %a% %% %b% 
+) else if %option% == 6 (
+	exit /B 0
 ) else (
-	if %option% == 2 (
-		set /A result = %a% - %b% 
-	) else (
-		if %option% == 3 (
-			set /A result = %a% * %b% 
-		) else (
-			if %option% == 4 (
-				set /A result = %a% / %b% 
-			) else (
-				if %option% == 5 (
-					set /A result = %a% %% %b% 
-				) else (
-					if %option% == 6 (
-						exit /B 0
-					) else (
-						cls
-						echo Bad option!
-						goto menu
-					)
-				)
-			)
-		)
-	)
+	cls
+	echo Bad option!
+	goto menu
 )
-
 
 echo Result is: %result%
 echo.
